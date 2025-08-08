@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Gang Gets Wi‑Fi</title>
+  <meta name="description" content="Guest Wi‑Fi access for friends & visitors.">
+  <meta property="og:title" content="The Gang Gets Wi‑Fi">
+  <meta property="og:description" content="Enter the secret code to reveal the password.">
+  <meta property="og:type" content="website">
+  <link rel="preload" href="assets/sfx/youve_got_mail.mp3" as="audio">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="desktop">
+    <div class="monitor-overlay"></div>
+    <div class="window">
+      <div class="titlebar" role="toolbar" aria-label="Window title bar">
+        <div class="title">
+          <img src="assets/icons/mail.svg" alt="" class="icon">
+          Internet Properties
+        </div>
+        <div class="controls">
+          <button aria-label="Minimize" class="btn">_</button>
+          <button aria-label="Maximize" class="btn">▢</button>
+          <button aria-label="Close" class="btn">X</button>
+        </div>
+      </div>
+      <div class="content">
+        <h1 class="hero">Welcome to the Network</h1>
+        <p class="tagline">Style: <span class="badge">Windows 95</span> • Enter the secret code to unlock</p>
+
+        <div class="group">
+          <label class="label">Network (SSID)</label>
+          <div class="field readonly">
+            <span class="mono" id="ssid">The Gang Gets WiFi</span>
+          </div>
+        </div>
+
+        <div class="group">
+          <label class="label">Password</label>
+          <div id="password-veil" class="veil" aria-hidden="true">
+            <div class="veil-noise"></div>
+            <div class="veil-text">••••••••••••</div>
+            <div class="veil-tip">Enter the secret code below to reveal</div>
+          </div>
+
+          <div id="password-revealed" class="field hidden" aria-live="polite">
+            <span class="mono" id="wifi-password">loremipsum</span>
+            <button id="copy-btn" class="button">Copy</button>
+          </div>
+        </div>
+
+        <div class="group">
+          <label for="secret" class="label">Secret Code</label>
+          <div class="field">
+            <input id="secret" class="input" autocomplete="off" placeholder="type it here">
+            <button id="unlock-btn" class="button primary">Unlock</button>
+          </div>
+          <div id="hint" class="hint" aria-live="polite"></div>
+        </div>
+
+        <div class="actions">
+          <button id="print-btn" class="button">Print this page</button>
+          <button id="qr-btn" class="button">Show QR instructions</button>
+        </div>
+
+        <details class="help">
+          <summary>Owner setup notes</summary>
+          <ol>
+            <li>Replace the password text <code>loremipsum</code> in <code>index.html</code>.</li>
+            <li>(Optional) Put an MP3 named <code>youve_got_mail.mp3</code> in <code>assets/sfx/</code>.</li>
+          </ol>
+        </details>
+
+      </div>
+    </div>
+  </div>
+
+  <audio id="sfx-mail" preload="auto">
+    <source src="assets/sfx/youve_got_mail.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
